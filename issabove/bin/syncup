@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+zcat /var/log/apt/history.log.*.gz | cat - /var/log/apt/history.log | grep -Po '^Commandline: apt-get install (?!.*--reinstall)\K.*' > pinetclone/issabove/apts.log
+#
+rsync --progress -r -u /home/pi/issabove/issabove.conf /home/pi/pinetclone/issabove
+rsync --progress -r -u /home/pi/bin /home/pi/pinetclone/issabove
+#rsync --progress -r -u /etc/dnsmasq.d /home/pi/pinetclone/pinetomd
+#rsync --progress -r -u /etc/hosts.dnsmasq /home/pi/pinetclone/pinetomd

@@ -1,0 +1,7 @@
+libasound2-dev
+cmake build-essential libusb-1.0-0-dev
+sox
+libsox-fmt-all
+x11vnc
+dnsmasq
+dnsutils

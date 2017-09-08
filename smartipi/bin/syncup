@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+DEST=/home/pi/pinetclone/`hostname`
+zcat /var/log/apt/history.log.*.gz | cat - /var/log/apt/history.log | grep -Po '^Commandline: apt-get install (?!.*--reinstall)\K.*' > $DEST/apts.log
+rsync --progress -r -u /home/pi/bin $DEST
+#rsync --progress -r -u /etc/default/dnsmasq $DEST
+#rsync --progress -r -u /etc/dnsmasq.d $DEST
+#rsync --progress -r -u /etc/hosts.dnsmasq $DEST

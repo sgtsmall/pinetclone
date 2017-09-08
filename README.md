@@ -46,7 +46,7 @@ piclean1.sh  step1.sh  step2.sh  syncup
 	- git remote set-url origin git@github.com:sgtsmall/pinetclone.git
 
 
-copy the relevant keys intthub ssh access into the .ssh folder
+copy the relevant keys for github ssh access into the .ssh folder
 
  - step2.sh
 	 - sudo chmod 600 ~/.ssh/id_rsa

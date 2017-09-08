@@ -79,6 +79,7 @@ git push
 cd ~
 bin/syncup
 cd pinetclone
+git add -A
 git commit -am "changing host with a useful comment"
 git push
 ```

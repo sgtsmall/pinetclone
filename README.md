@@ -4,9 +4,9 @@ Config directory for Pi Boxes
 I recently had a pi sdcard let go ... they do that from time to time!
 Fortunately I had recently built a similar unit and had the scripts and notes available, although I wasn't sure I had everything. I had been meaning to build this system up for a while so now here goes.
 
-It's Sep '17 and early days for thisi so hopefully improves with age.
+It's Sep '17 and early days for this so hopefully improves with age.
 
-### Initial setup
+## Initial setup
 
 I have started putting this in some scripts, but several manual steps for now.
 
@@ -33,9 +33,9 @@ ls setup
 pi@smartipi:~/pinetclone $ pwd
 /home/pi/pinetclone
 pi@smartipi:~/pinetclone $ ls setup
-piclean1.sh  step1.sh  step2.sh  syncupo
+piclean1.sh  step1.sh  step2.sh  syncup
 ```
- - step1.sh
+ - step1.sh    makes some directories 
  	- mkdir ~/.ssh
  	- mkdir ~/bin
  	- mkdir ~/pinetclone/`hostname`
@@ -46,7 +46,7 @@ piclean1.sh  step1.sh  step2.sh  syncupo
 	- git remote set-url origin git@github.com:sgtsmall/pinetclone.git
 
 
-copy the relevant keys into the .ssh folder
+copy the relevant keys intthub ssh access into the .ssh folder
 
  - step2.sh
 	 - sudo chmod 600 ~/.ssh/id_rsa
@@ -60,11 +60,25 @@ ssh -T git@github.com
  now you can check bin/syncup it doesn't have much unique at this stage.
 The first command tries to look for apt-get installs
 
- - piclean1.sh   this script tends to remove wolfram and libreoffice
+ - piclean1.sh   this script simply removes wolfram and libreoffice which can slow down updates because they can be huge.
 
+	- sudo apt-get -y remove --purge wolfram-engine
+	- sudo apt-get -y remove --purge libreoffice*
+	- sudo apt-get clean
+	- sudo apt-get -y autoremove
 
 ```
 git add -A
 git commit -am "adding host"
+git push
+```
+
+## Ongoing  after making changes to a machine update the syncup file if useful then run it and upload to github.
+
+```
+cd ~
+bin/syncup
+cd pinetclone
+git commit -am "changing host with a useful comment"
 git push
 ```

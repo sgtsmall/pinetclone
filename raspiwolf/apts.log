@@ -1,0 +1,20 @@
+wine
+wine
+xinetd
+check-mk-agent
+conky-std
+x11vnc
+libasound2-dev git-core dnsmasq dnsutils
+libusb-1.0-0-dev gawk gpsd libgps-dev gpsd-clients python-gps libpython-dev automake libtool texinfo
+swig
+libxml2-dev
+libreadline6 libreadline6-dev
+fldigi
+flrig
+wsjtx
+libxft-dev
+subversion
+dialog
+build-essential openssh-server git libyaml-tiny-perl libdate-calc-perl libjson-perl libtest-pod-coverage-perl
+apache2 libapache2-mod-php5
+openjdk-7-jre librxtx-java unzip
